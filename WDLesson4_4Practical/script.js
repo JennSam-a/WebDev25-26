@@ -23,8 +23,8 @@
        4) Display msg in the output
 */
 function checkResponse(){
-    const userResponse = document.getElementById("response").value;
-    const outputDiv = document.getElementById("output");
+    let userResponse = document.getElementById("response").value;
+    let outputDiv = document.getElementById("output");
 
     let msg = "";
      if (parseInt(userResponse) === correct) {

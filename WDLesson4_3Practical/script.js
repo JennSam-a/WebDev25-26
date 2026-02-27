@@ -14,3 +14,14 @@ Guideline:
 Use past examples, classwork and practicals to assist you in completing this practical.
 */
 
+function bmi_calc(){
+       //variables
+       let h = parseFloat(document.getElementById("h").value);
+       let w = parseFloat(document.getElementById("w").value);
+       let op = document.getElementById("output");
+       let status ="";
+       let filename="";
+
+       //calculation
+       let bmi = 703 * w / (h**2);
+       

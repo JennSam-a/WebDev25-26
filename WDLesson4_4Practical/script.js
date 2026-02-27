@@ -6,14 +6,11 @@
  */
  let correct;
    function generateProblem(){
-       const problemSpan = document.getElementById("problem");
-
-    const num1 = Math.floor(Math.random() * 21);
-    const num2 = Math.floor(Math.random() * 21);
-
+    let prob = document.getElementById("problem");
+    let num1 = Math.floor(Math.random() * 21);
+    let num2 = Math.floor(Math.random() * 21);
     correct = num1 + num2;
-
-    problemSpan.textContent = `${num1} + ${num2} =`;
+    prob.innerHTML= `${num1} + ${num2} =`;
 }
                             
 /* Challenge 3: Complete the function checkResponse by ,

@@ -3,7 +3,7 @@
            Note: Typically user enter rates as percentages.  Divide the value retrieved by 100.
                  Remember principals and rates have decimals.
         2) Create a build variable to start the table
-        3) Establish the for loop to iterate over the number of months in the investment
+        3) Establish the for loop to iterate over the number of years in the investment
         4) Calculate the balance using compound interest for each year. Hint: Loop variable
         5) Build each row for the balance after each year
            Note: When interpolating the balance, use a.toFixed(2) to adjust the amounts to two decimal places.  
@@ -11,9 +11,27 @@
 */
 
 function balance(){
-
-
+        let output = document.getElementById("output");
+        let p = parseFloat(document.getElementById("p").value);
+        let r = parseFloat(document.getElementById("r").value);
+        let years = parseFloat(document.getElementById("t").value);
+        let build = "";
+        build += `<table>
+                        <tr>
+                            <th>Year</th>
+                            <th>Balance</th>
+                        </tr>`;
+    for(let t = 0; t <= years; t += 1){
+        let A = p *Math.pow( 1 + (r/100), t);
+        build += `<tr>
+                        <td>${t}</td>
+                        <td>$${A.toFixed(2)}</td>
+                </tr>`;
+        }
+    build += `</table>`;
+    output.innerHTML = build;
 }
+
 
 /* Challenge Bonus: Allow the user to enter n.  This will require you to modify,
         1) Retrieve the value of n from the user.
